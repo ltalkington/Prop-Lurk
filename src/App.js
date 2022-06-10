@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import Dashboard from "./Pages/Dashboard";
+import Properties from "./Pages/Properties";
+import Financials from "./Pages/Financials";
+import Calculators from "./Pages/Calculators";
+import Profile from "./Pages/Profile";
+import Settings from "./Pages/Settings";
+import Contact from "./Pages/Contact";
+import AddProperty from "./Pages/AddProperty";
+import UpdateProperty from "./Pages/UpdateProperty";
+import RemoveProperty from "./Pages/RemoveProperty";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<Dashboard></Dashboard>}></Route>
+          <Route
+            path="/properties"
+            exact
+            element={<Properties></Properties>}
+          ></Route>
+          <Route
+            path="/financials"
+            exact
+            element={<Financials></Financials>}
+          ></Route>
+          <Route
+            path="/calculators"
+            exact
+            element={<Calculators></Calculators>}
+          ></Route>
+          <Route
+            path="/addproperty"
+            exact
+            element={<AddProperty></AddProperty>}
+          ></Route>
+          <Route
+            path="/updateproperty"
+            exact
+            element={<UpdateProperty></UpdateProperty>}
+          ></Route>
+          <Route
+            path="/removeproperty"
+            exact
+            element={<RemoveProperty></RemoveProperty>}
+          ></Route>
+          <Route path="/profile" exact element={<Profile></Profile>}></Route>
+          <Route path="/settings" exact element={<Settings></Settings>}></Route>
+          <Route path="/contact" exact element={<Contact></Contact>}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
