@@ -11,6 +11,11 @@ import Contact from "./Pages/Contact";
 import AddProperty from "./Pages/AddProperty";
 import UpdateProperty from "./Pages/UpdateProperty";
 import RemoveProperty from "./Pages/RemoveProperty";
+import NewDeal from "./Pages/NewDeal";
+import FlipDeal from "./Pages/FlipDeal";
+import CompCalculator from "./Pages/SalesComp";
+import WholesaleCalculator from "./Pages/Wholesale";
+
 function App() {
   return (
     <div>
@@ -46,6 +51,26 @@ function App() {
             path="/removeproperty"
             exact
             element={<RemoveProperty></RemoveProperty>}
+          ></Route>
+          <Route
+            path="/newdealanalyzer"
+            exact
+            element={<NewDeal></NewDeal>}
+          ></Route>
+          <Route
+            path="/flipanalyzer"
+            exact
+            element={<FlipDeal></FlipDeal>}
+          ></Route>
+          <Route
+            path="/compcalculator"
+            exact
+            element={<CompCalculator></CompCalculator>}
+          ></Route>
+          <Route
+            path="/wholesalecalculator"
+            exact
+            element={<WholesaleCalculator></WholesaleCalculator>}
           ></Route>
           <Route path="/profile" exact element={<Profile></Profile>}></Route>
           <Route path="/settings" exact element={<Settings></Settings>}></Route>
