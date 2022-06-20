@@ -6,6 +6,8 @@ import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import { useState } from "react";
+import WholesaleSwitcher from "./WholesaleSwitcher";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#293145" : "#293145",
@@ -16,6 +18,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 function WholesaleCalculator() {
   let drawerWidth = 240;
+  const [step, setStep] = useState(1);
+
   return (
     <header className="App-header2">
       <ResponsiveDrawer></ResponsiveDrawer>
@@ -37,7 +41,7 @@ function WholesaleCalculator() {
             alignContent: "center",
           }}
         >
-          <h1> Wholesale Calculator</h1>
+          <WholesaleSwitcher step={step} setStep={setStep}></WholesaleSwitcher>
         </Grid>
       </Box>
     </header>

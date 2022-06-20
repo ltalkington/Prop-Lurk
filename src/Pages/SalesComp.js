@@ -6,6 +6,8 @@ import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import { useState } from "react";
+import SalesCompSwitcher from "./SalesCompSwitcher";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#293145" : "#293145",
@@ -15,6 +17,8 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary === "dark" ? "#fff" : "#fff",
 }));
 function CompCalculator() {
+  const [step, setStep] = useState(1);
+
   let drawerWidth = 240;
   return (
     <header className="App-header2">
@@ -37,7 +41,7 @@ function CompCalculator() {
             alignContent: "center",
           }}
         >
-          <h1> Comps </h1>
+          <SalesCompSwitcher step={step} setStep={setStep}></SalesCompSwitcher>
         </Grid>
       </Box>
     </header>

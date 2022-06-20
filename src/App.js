@@ -27,11 +27,11 @@ function App() {
             exact
             element={<Properties></Properties>}
           ></Route>
-          <Route
+          {/* <Route
             path="/financials"
             exact
             element={<Financials></Financials>}
-          ></Route>
+          ></Route> */}
           <Route
             path="/calculators"
             exact

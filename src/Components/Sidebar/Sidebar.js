@@ -53,12 +53,12 @@ function ResponsiveDrawer(props) {
           </ListItemIcon>
           <ListItemText primary="Properties" />
         </ListItem>
-        <ListItem button key="Financials" component={Link} to="/financials">
+        {/* <ListItem button key="Financials" component={Link} to="/financials">
           <ListItemIcon>
             <AttachMoneyIcon />
           </ListItemIcon>
           <ListItemText primary="Financials" />
-        </ListItem>
+        </ListItem> */}
         <ListItem button key="Calculators" component={Link} to="/calculators">
           <ListItemIcon>
             <CalculateIcon />

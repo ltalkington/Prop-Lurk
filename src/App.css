@@ -66,3 +66,22 @@ hr {
     transform: rotate(360deg);
   }
 }
+.btnforward1 {
+  margin-left: 270px;
+  align-self: right;
+  border-radius: 10px;
+}
+
+.btnforward {
+  margin-left: 200px;
+  align-self: right;
+  border-radius: 10px;
+}
+
+.btnbackwards {
+  border-radius: 10px;
+}
+
+.row {
+  padding: 10px;
+}

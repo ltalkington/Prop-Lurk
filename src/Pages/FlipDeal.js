@@ -6,6 +6,9 @@ import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import FlipDealPageSwitcher from "./FlipDealPageSwitcher";
+import Form from "react-bootstrap/Form";
+import { useState } from "react";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#293145" : "#293145",
@@ -15,6 +18,8 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary === "dark" ? "#fff" : "#fff",
 }));
 function FlipDeal() {
+  const [step, setStep] = useState(1);
+
   let drawerWidth = 240;
   return (
     <header className="App-header2">
@@ -37,7 +42,12 @@ function FlipDeal() {
             alignContent: "center",
           }}
         >
-          <h1> Flip Deals</h1>
+          <Form>
+            <FlipDealPageSwitcher
+              step={step}
+              setStep={setStep}
+            ></FlipDealPageSwitcher>
+          </Form>
         </Grid>
       </Box>
     </header>

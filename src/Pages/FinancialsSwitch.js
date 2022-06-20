@@ -155,7 +155,7 @@ function FinancialsSwitcher({ step }) {
           </Grid>
         </header>
       );
-    case 4:
+    case 15:
       return (
         <header>
           <Grid container spacing={3}>
