@@ -19,6 +19,19 @@ import {
 } from "@mui/material";
 import InsertChartIcon from "@mui/icons-material/InsertChartOutlined";
 import ResultPage from "./ResultPage";
+import Grade from "../Components/Results/Grade";
+import Revenue from "../Components/Results/Revenue";
+import Expenses from "../Components/Results/Expenses";
+import Profits from "../Components/Results/Profits";
+import Cashflow from "../Components/Results/Cashflow";
+import CashReturn from "../Components/Results/CashReturn";
+import ROI from "../Components/Results/ROI";
+import CapRate from "../Components/Results/CapRate";
+import QuickRatios from "../Components/Results/QuickRatios";
+import LoanInfo from "../Components/Results/LoanInfo";
+import HomeValue from "../Components/Results/HomeValue";
+import DealCrit from "../Components/Results/DealCrit";
+import MonthlyFlow from "../Components/Results/MonthlyFlow";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#293145" : "#293145",
@@ -595,8 +608,58 @@ function NewDealSwitcher({ step, setStep }) {
     case 6:
       return (
         <header>
-          <h1>{reportName}</h1>
-          <ResultPage></ResultPage>
+          <Box
+            component="main"
+            sx={{
+              flexGrow: 1,
+              py: 8,
+            }}
+          >
+            <Container maxWidth={false}>
+              <Grid container spacing={3}>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <Grade></Grade>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <Revenue></Revenue>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <Expenses></Expenses>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <Profits></Profits>
+                </Grid>
+                <Grid item lg={12} md={12} xl={12} xs={12}>
+                  <Cashflow></Cashflow>
+                </Grid>
+
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <ROI></ROI>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <CashReturn></CashReturn>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <MonthlyFlow></MonthlyFlow>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <CapRate></CapRate>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <QuickRatios></QuickRatios>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <LoanInfo></LoanInfo>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <HomeValue></HomeValue>
+                </Grid>
+                <Grid item xl={3} lg={3} sm={6} xs={12}>
+                  <DealCrit></DealCrit>
+                </Grid>
+              </Grid>
+            </Container>
+          </Box>
         </header>
       );
   }

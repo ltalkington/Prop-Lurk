@@ -39,8 +39,8 @@ function Calculators() {
         >
           <Grid item xs={12} md={6}>
             <Item>
-              <h1> New Deal Analyzer</h1>
-              <p> Analyze any new deal that you would like to purchase </p>
+              <h1>Rental Analyzer</h1>
+              <p> Analyze any rental deal </p>
               <Button
                 variant="contained"
                 component={Link}
@@ -73,7 +73,7 @@ function Calculators() {
               <h1> Wholesale Calculator</h1>
               <p>
                 {" "}
-                See what price ranges would make sense to wholsale a property
+                See what price ranges would make sense to wholesale a property
               </p>
               <Button
                 variant="contained"
