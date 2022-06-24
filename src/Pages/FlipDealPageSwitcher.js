@@ -28,6 +28,21 @@ import {
   Container,
 } from "@mui/material";
 function FlipDealSwitcher({ step, setStep }) {
+  const [reportName, setReportName] = useState("");
+  const [propertyAddress, setPropertyAddress] = useState("");
+  const [propertyCity, setPropertyCity] = useState("");
+  const [propertyState, setPropertyState] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [desiredProfit, setDesiredProfit] = useState("");
+  const [propertyType, setPropertyType] = useState("");
+  const [estimatedRepairs, setEstimatedRepairs] = useState("");
+  const [holdingCosts, setHoldingCosts] = useState("");
+  const [purchasePrice, setPurchasePrice] = useState("");
+  const [lengthToFlip, setLengthToFlip] = useState("");
+  const [closingCosts, setClosingCosts] = useState("");
+  const [agentCommission, setAgentCommission] = useState("");
+  const [ARV, setARV] = useState("");
+  
   switch (step) {
     case 1:
       return (
@@ -207,18 +222,30 @@ function FlipDealSwitcher({ step, setStep }) {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Estimated Repairs</Form.Label>
-                <Form.Control type="estimatedRepairs" placeholder="$20,000" value={estimatedRepairs}
-                  onChange={(e) => setEstimatedRepairs(e.target.value)}/>
+                <Form.Control
+                  type="estimatedRepairs"
+                  placeholder="$20,000"
+                  value={estimatedRepairs}
+                  onChange={(e) => setEstimatedRepairs(e.target.value)}
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Holding Costs</Form.Label>
-                <Form.Control type="holdingCosts" placeholder="$5,000" value={holdingCosts}
-                  onChange={(e) => setHoldingCosts(e.target.value)} />
+                <Form.Control
+                  type="holdingCosts"
+                  placeholder="$5,000"
+                  value={holdingCosts}
+                  onChange={(e) => setHoldingCosts(e.target.value)}
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Length in Months to Flip</Form.Label>
-                <Form.Control type="lengthToFlip" placeholder="10 months..."  value={lengthToFlip}
-                  onChange={(e) => setLengthToFlip(e.target.value)}/>
+                <Form.Control
+                  type="lengthToFlip"
+                  placeholder="10 months..."
+                  value={lengthToFlip}
+                  onChange={(e) => setLengthToFlip(e.target.value)}
+                />
               </Form.Group>
 
               <Button
@@ -261,11 +288,13 @@ function FlipDealSwitcher({ step, setStep }) {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Agent Commission %</Form.Label>
-                <Form.Control type="agentCommission" placeholder="5%" value={agentCommission}
-                  onChange={(e) => setAgentCommission(e.target.value)}/>
+                <Form.Control
+                  type="agentCommission"
+                  placeholder="5%"
+                  value={agentCommission}
+                  onChange={(e) => setAgentCommission(e.target.value)}
+                />
               </Form.Group>
-
-            
 
               <Button
                 className="btnbackwards"

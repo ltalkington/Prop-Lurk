@@ -28,6 +28,23 @@ import HomeValue from "../Components/Results/HomeValue";
 import DealCrit from "../Components/Results/DealCrit";
 import MonthlyFlow from "../Components/Results/MonthlyFlow";
 function WholesaleSwitcher({ step, setStep }) {
+  const [reportName, setReportName] = useState("");
+  const [propertyAddress, setPropertyAddress] = useState("");
+  const [propertyCity, setPropertyCity] = useState("");
+  const [propertyState, setPropertyState] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [desiredProfit, setDesiredProfit] = useState("");
+  const [propertyType, setPropertyType] = useState("");
+  const [estimatedRepairs, setEstimatedRepairs] = useState("");
+  const [cashReturn, setCashReturn] = useState("");
+
+  const [closingCosts, setClosingCosts] = useState("");
+  const [otherMonthlyIncome, setOtherMonthlyIncome] = useState("");
+  const [propertyTax, setPropertyTax] = useState("");
+  const [ARV, setARV] = useState("");
+  const [monthlyRent, setMonthlyRent] = useState("");
+  const [monthlyExpenses, setMonthlyExpenses] = useState("");
+
   switch (step) {
     case 1:
       return (
@@ -208,7 +225,7 @@ function WholesaleSwitcher({ step, setStep }) {
                   type="estimatedRepairs"
                   placeholder="$20,000"
                   value={estimatedRepairs}
-                  onChange={(e) => setLoanInterest(e.target.value)}
+                  onChange={(e) => setEstimatedRepairs(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -274,7 +291,7 @@ function WholesaleSwitcher({ step, setStep }) {
                   type="monthlyRent"
                   placeholder="$1,200"
                   value={monthlyRent}
-                  onChange={(e) => setLoanInterest(e.target.value)}
+                  onChange={(e) => setMonthlyRent(e.target.value)}
                 />
               </Form.Group>
 
@@ -284,7 +301,7 @@ function WholesaleSwitcher({ step, setStep }) {
                   type="otherMonthlyIncome"
                   placeholder="$200"
                   value={otherMonthlyIncome}
-                  onChange={(e) => setLoanInterest(e.target.value)}
+                  onChange={(e) => setOtherMonthlyIncome(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">

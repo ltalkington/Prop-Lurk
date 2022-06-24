@@ -28,6 +28,49 @@ import {
   Container,
 } from "@mui/material";
 function SalesCompSwitcher({ step, setStep }) {
+  const [reportName, setReportName] = useState("");
+  const [propertyAddress, setPropertyAddress] = useState("");
+  const [propertyCity, setPropertyCity] = useState("");
+  const [propertyState, setPropertyState] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [annualPropertyTax, setAnnualPropertyTax] = useState("");
+  const [propertyType, setPropertyType] = useState("");
+  const [totalUnits, setTotalUnits] = useState("");
+  const [sqFeet, setSqFeet] = useState("");
+  const [purchasePrice, setPurchasePrice] = useState("");
+  const [bedrooms, setBedrooms] = useState("");
+  const [bathrooms, setBathrooms] = useState("");
+  const [garage, setGarage] = useState("");
+  const [lotSize, setLotSize] = useState("");
+  const [condition, setCondition] = useState("");
+  const [propertyAddress1, setPropertyAddress1] = useState("");
+  const [propertyCity1, setPropertyCity1] = useState("");
+  const [propertyState1, setPropertyState1] = useState("");
+  const [zipCode1, setZipCode1] = useState("");
+  const [annualPropertyTax1, setAnnualPropertyTax1] = useState("");
+  const [propertyType1, setPropertyType1] = useState("");
+  const [totalUnits1, setTotalUnits1] = useState("");
+  const [sqFeet1, setSqFeet1] = useState("");
+  const [purchasePrice1, setPurchasePrice1] = useState("");
+  const [bedrooms1, setBedrooms1] = useState("");
+  const [bathrooms1, setBathrooms1] = useState("");
+  const [garage1, setGarage1] = useState("");
+  const [lotSize1, setLotSize1] = useState("");
+  const [condition1, setCondition1] = useState("");
+  const [propertyAddress2, setPropertyAddress2] = useState("");
+  const [propertyCity2, setPropertyCity2] = useState("");
+  const [propertyState2, setPropertyState2] = useState("");
+  const [zipCode2, setZipCode2] = useState("");
+  const [annualPropertyTax2, setAnnualPropertyTax2] = useState("");
+  const [propertyType2, setPropertyType2] = useState("");
+  const [totalUnits2, setTotalUnits2] = useState("");
+  const [sqFeet2, setSqFeet2] = useState("");
+  const [purchasePrice2, setPurchasePrice2] = useState("");
+  const [bedrooms2, setBedrooms2] = useState("");
+  const [bathrooms2, setBathrooms2] = useState("");
+  const [garage2, setGarage2] = useState("");
+  const [lotSize2, setLotSize2] = useState("");
+  const [condition2, setCondition2] = useState("");
   switch (step) {
     case 1:
       return (
@@ -96,13 +139,13 @@ function SalesCompSwitcher({ step, setStep }) {
                   type="annualPropertyTax"
                   placeholder="$1800"
                   value={annualPropertyTax}
-                  onChange={(e) => setLoanInterest(e.target.value)}
+                  onChange={(e) => setAnnualPropertyTax(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>What Type of Property is this?</Form.Label>
                 <Form.Select
-                  value={propetyType}
+                  value={propertyType}
                   onChange={(e) => setPropertyType(e.target.value)}
                 >
                   <option>Commerical</option>
@@ -291,8 +334,8 @@ function SalesCompSwitcher({ step, setStep }) {
                 <Form.Control
                   type="propertyTax"
                   placeholder="$1,200"
-                  value={propertyTax1}
-                  onChange={(e) => setPropertyTax1(e.target.value)}
+                  value={annualPropertyTax1}
+                  onChange={(e) => setAnnualPropertyTax1(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -351,7 +394,7 @@ function SalesCompSwitcher({ step, setStep }) {
                   type="totalUnits1"
                   placeholder="5"
                   value={totalUnits1}
-                  onChange={(e) => setTotalUnits(e.target.value)}
+                  onChange={(e) => setTotalUnits1(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -497,8 +540,8 @@ function SalesCompSwitcher({ step, setStep }) {
                 <Form.Control
                   type="propertyTax"
                   placeholder="$1,200"
-                  value={propertyTax2}
-                  onChange={(e) => setPropertyTax2(e.target.value)}
+                  value={annualPropertyTax2}
+                  onChange={(e) => setAnnualPropertyTax2(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
