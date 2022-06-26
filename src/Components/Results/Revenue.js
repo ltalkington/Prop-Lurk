@@ -9,7 +9,13 @@ import {
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import MoneyIcon from "@mui/icons-material/Money";
 
-function Revenue(props) {
+function Revenue({
+  props,
+  grossRent,
+  otherIncome,
+  setTotalMonthlyRevenue,
+  totalMonthlyRevenue,
+}) {
   return (
     <Card sx={{ height: "100%" }} {...props}>
       <CardContent>
@@ -19,7 +25,11 @@ function Revenue(props) {
               YEARLY REVENUE
             </Typography>
             <Typography color="textPrimary" variant="h4">
-              $42k
+              {"$"}
+              {(parseInt(grossRent) + parseInt(otherIncome)) * 12}
+              {setTotalMonthlyRevenue(
+                parseInt(grossRent) + parseInt(otherIncome)
+              )}
             </Typography>
           </Grid>
           <Grid item>

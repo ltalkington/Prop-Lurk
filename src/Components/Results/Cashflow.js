@@ -10,7 +10,15 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import MoneyIcon from "@mui/icons-material/Money";
 import Table from "react-bootstrap/Table";
 
-function Cashflow(props) {
+function Cashflow({
+  props,
+  totalMonthlyExpense,
+  totalMonthlyRevenue,
+  totalProfit,
+  annualGrowth,
+  annualPVGrowth,
+  annualExpenseGrowth,
+}) {
   return (
     <Table responsive className="financials-table">
       <thead>
@@ -27,30 +35,162 @@ function Cashflow(props) {
       <tbody>
         <tr>
           <td>Revenue</td>
-          <td>$200,000</td>
-          <td>$190,000</td>
-          <td>$175,000</td>
-          <td>$135,000</td>
-          <td>$100,000</td>
-          <td>$30,000</td>
+          <td>
+            {"$"}
+            {(totalMonthlyRevenue * 12).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue *
+              12 *
+              (1 + parseInt(annualGrowth) / 100)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {" "}
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue *
+              12 *
+              ((1 + parseInt(annualGrowth) / 100) * 2)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {" "}
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue *
+              12 *
+              ((1 + parseInt(annualGrowth) / 100) * 3)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {" "}
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue *
+              12 *
+              ((1 + parseInt(annualGrowth) / 100) * 4)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue *
+              12 *
+              ((1 + parseInt(annualGrowth) / 100) * 5)
+            ).toFixed(2)}
+          </td>
         </tr>
         <tr>
           <td>Expenses</td>
-          <td>$188,000</td>
-          <td>$190,000</td>
-          <td>$170,000</td>
-          <td>$35,000</td>
-          <td>$110,000</td>
-          <td>$102,000</td>
+          <td>
+            {" "}
+            {"$"}
+            {(totalMonthlyExpense * 12).toFixed(2)}
+          </td>
+          <td>
+            {" "}
+            {"$"}{" "}
+            {(
+              totalMonthlyExpense *
+              12 *
+              (1 + parseInt(annualExpenseGrowth) / 100)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyExpense *
+              12 *
+              ((1 + parseInt(annualExpenseGrowth) / 100) * 2)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyExpense *
+              12 *
+              ((1 + parseInt(annualExpenseGrowth) / 100) * 3)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyExpense *
+              12 *
+              ((1 + parseInt(annualExpenseGrowth) / 100) * 4)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {"$"}
+            {(
+              totalMonthlyExpense *
+              12 *
+              ((1 + parseInt(annualExpenseGrowth) / 100) * 5)
+            ).toFixed(2)}
+          </td>
         </tr>
         <tr>
           <td>Profit</td>
-          <td>$12,000</td>
-          <td>$0</td>
-          <td>$5,000</td>
-          <td>$100,000</td>
-          <td>-$10,000</td>
-          <td>-$72,000</td>
+          <td>
+            {"$"}
+            {(totalMonthlyRevenue * 12 - totalMonthlyExpense * 12).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue * 12 * (1 + parseInt(annualGrowth) / 100) -
+              totalMonthlyExpense *
+                12 *
+                (1 + parseInt(annualExpenseGrowth) / 100)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue *
+                12 *
+                ((1 + parseInt(annualGrowth) / 100) * 2) -
+              totalMonthlyExpense *
+                12 *
+                ((1 + parseInt(annualExpenseGrowth) / 100) * 2)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue *
+                12 *
+                ((1 + parseInt(annualGrowth) / 100) * 3) -
+              totalMonthlyExpense *
+                12 *
+                ((1 + parseInt(annualExpenseGrowth) / 100) * 3)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue *
+                12 *
+                ((1 + parseInt(annualGrowth) / 100) * 4) -
+              totalMonthlyExpense *
+                12 *
+                ((1 + parseInt(annualExpenseGrowth) / 100) * 4)
+            ).toFixed(2)}
+          </td>
+          <td>
+            {"$"}{" "}
+            {(
+              totalMonthlyRevenue *
+                12 *
+                ((1 + parseInt(annualGrowth) / 100) * 5) -
+              totalMonthlyExpense *
+                12 *
+                ((1 + parseInt(annualExpenseGrowth) / 100) * 5)
+            ).toFixed(2)}
+          </td>
         </tr>
       </tbody>
     </Table>

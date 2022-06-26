@@ -9,7 +9,20 @@ import {
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import MoneyIcon from "@mui/icons-material/Money";
 
-function Expenses(props) {
+function Expenses({
+  props,
+  electricExpense,
+  waterAndSewer,
+  PMI,
+  garbageExpense,
+  HOAS,
+  monthlyInsurance,
+  vacancyRate,
+  CapEx,
+  otherExpenses,
+  repairsAndMaintenance,
+  setTotalMonthlyExpense,
+}) {
   return (
     <Card sx={{ height: "100%" }} {...props}>
       <CardContent>
@@ -19,7 +32,28 @@ function Expenses(props) {
               YEARLY EXPENSES
             </Typography>
             <Typography color="textPrimary" variant="h4">
-              $22k
+              {"$"}{" "}
+              {(parseInt(electricExpense) +
+                parseInt(waterAndSewer) +
+                parseInt(PMI) +
+                parseInt(garbageExpense) +
+                parseInt(HOAS) +
+                parseInt(monthlyInsurance) +
+                parseInt(CapEx) +
+                parseInt(repairsAndMaintenance) +
+                parseInt(otherExpenses)) *
+                12}
+              {setTotalMonthlyExpense(
+                parseInt(electricExpense) +
+                  parseInt(waterAndSewer) +
+                  parseInt(PMI) +
+                  parseInt(garbageExpense) +
+                  parseInt(HOAS) +
+                  parseInt(monthlyInsurance) +
+                  parseInt(CapEx) +
+                  parseInt(repairsAndMaintenance) +
+                  parseInt(otherExpenses)
+              )}
             </Typography>
           </Grid>
           <Grid item>

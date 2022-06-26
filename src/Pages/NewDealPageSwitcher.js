@@ -41,44 +41,46 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary === "dark" ? "#fff" : "#fff",
 }));
 function NewDealSwitcher({ step, setStep }) {
-  const [reportName, setReportName] = useState("");
-  const [propertyAddress, setPropertyAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [propertyState, setPropertyState] = useState("");
-  const [zipCode, setZipCode] = useState("");
-  const [propertyTaxAmount, setPropertyTaxAmount] = useState("");
-  const [propertyType, setPropertyType] = useState("");
-  const [numberOfUnits, setNumberOfUnits] = useState("");
-  const [squareFootage, setSquareFootage] = useState("");
-  const [purchasePrice, setPurchasePrice] = useState("");
-  const [afterRepairValue, setAfterRepairValue] = useState("");
-  const [closingCosts, setClosingCosts] = useState("");
-  const [repairs, setRepairs] = useState("");
-  const [downPayment, setDownPayment] = useState("");
-  const [loanInterest, setLoanInterest] = useState("");
-  const [loanLength, setLoanLength] = useState("");
-  const [pointsCharged, setPointsCharged] = useState("");
-  const [otherLenderCharges, setOtherLenderCharges] = useState("");
-  const [loanAndPoints, setLoanAndPoints] = useState("");
-  const [grossRent, setGrossRent] = useState("");
-  const [otherIncome, setOtherIncome] = useState("");
-  const [purchaseMethod, setPurchaseMethod] = useState("");
-  const [electricExpense, setElectricExpense] = useState("");
-  const [waterAndSewer, setWaterAndSewer] = useState("");
-  const [PMI, setPMI] = useState("");
-  const [garbageExpense, setGarbageExpense] = useState("");
-  const [HOAS, setHOAS] = useState("");
-  const [monthlyInsurance, setMonthlyInsurance] = useState("");
-  const [vacancyRate, setVacancyRate] = useState("");
-  const [CapEx, setCapEx] = useState("");
-  const [otherExpenses, setOtherExpenses] = useState("");
-  const [repairsAndMaintenance, setRepairsAndMaintenance] = useState("");
-  const [managementFees, setManagementFees] = useState("");
-  const [annualGrowth, setAnnualGrowth] = useState("");
-  const [annualPVGrowth, setAnnualPVGrowth] = useState("");
-  const [annualExpenseGrowth, setAnnualExpenseGrowth] = useState("");
-  const [salesExpenseGrowth, setSalesExpenseGrowth] = useState("");
-
+  const [reportName, setReportName] = useState(0);
+  const [propertyAddress, setPropertyAddress] = useState(0);
+  const [city, setCity] = useState(0);
+  const [propertyState, setPropertyState] = useState(0);
+  const [zipCode, setZipCode] = useState(0);
+  const [propertyTaxAmount, setPropertyTaxAmount] = useState(0);
+  const [propertyType, setPropertyType] = useState(0);
+  const [numberOfUnits, setNumberOfUnits] = useState(0);
+  const [squareFootage, setSquareFootage] = useState(0);
+  const [purchasePrice, setPurchasePrice] = useState(0);
+  const [afterRepairValue, setAfterRepairValue] = useState(0);
+  const [closingCosts, setClosingCosts] = useState(0);
+  const [repairs, setRepairs] = useState(0);
+  const [downPayment, setDownPayment] = useState(0);
+  const [loanInterest, setLoanInterest] = useState(0);
+  const [loanLength, setLoanLength] = useState(0);
+  const [pointsCharged, setPointsCharged] = useState(0);
+  const [otherLenderCharges, setOtherLenderCharges] = useState(0);
+  const [loanAndPoints, setLoanAndPoints] = useState(0);
+  const [grossRent, setGrossRent] = useState(0);
+  const [otherIncome, setOtherIncome] = useState(0);
+  const [purchaseMethod, setPurchaseMethod] = useState(0);
+  const [electricExpense, setElectricExpense] = useState(0);
+  const [waterAndSewer, setWaterAndSewer] = useState(0);
+  const [PMI, setPMI] = useState(0);
+  const [garbageExpense, setGarbageExpense] = useState(0);
+  const [HOAS, setHOAS] = useState(0);
+  const [monthlyInsurance, setMonthlyInsurance] = useState(0);
+  const [vacancyRate, setVacancyRate] = useState(0);
+  const [CapEx, setCapEx] = useState(0);
+  const [otherExpenses, setOtherExpenses] = useState(0);
+  const [repairsAndMaintenance, setRepairsAndMaintenance] = useState(0);
+  const [managementFees, setManagementFees] = useState(0);
+  const [annualGrowth, setAnnualGrowth] = useState(0);
+  const [annualPVGrowth, setAnnualPVGrowth] = useState(0);
+  const [annualExpenseGrowth, setAnnualExpenseGrowth] = useState(0);
+  const [salesExpenseGrowth, setSalesExpenseGrowth] = useState(0);
+  const [totalMonthlyRevenue, setTotalMonthlyRevenue] = useState(0);
+  const [totalMonthlyExpense, setTotalMonthlyExpense] = useState(0);
+  const [totalProfit, setTotalProfit] = useState(0);
   switch (step) {
     case 1:
       return (
@@ -621,16 +623,44 @@ function NewDealSwitcher({ step, setStep }) {
                   <Grade></Grade>
                 </Grid>
                 <Grid item xl={3} lg={3} sm={6} xs={12}>
-                  <Revenue></Revenue>
+                  <Revenue
+                    grossRent={grossRent}
+                    otherIncome={otherIncome}
+                    totalMonthlyRevenue={totalMonthlyRevenue}
+                    setTotalMonthlyRevenue={setTotalMonthlyRevenue}
+                  ></Revenue>
                 </Grid>
                 <Grid item xl={3} lg={3} sm={6} xs={12}>
-                  <Expenses></Expenses>
+                  <Expenses
+                    electricExpense={electricExpense}
+                    waterAndSewer={waterAndSewer}
+                    PMI={PMI}
+                    garbageExpense={garbageExpense}
+                    HOAS={HOAS}
+                    monthlyInsurance={monthlyInsurance}
+                    CapEx={CapEx}
+                    otherExpenses={otherExpenses}
+                    repairsAndMaintenance={repairsAndMaintenance}
+                    setTotalMonthlyExpense={setTotalMonthlyExpense}
+                    totalMonthlyExpense={totalMonthlyExpense}
+                  ></Expenses>
                 </Grid>
                 <Grid item xl={3} lg={3} sm={6} xs={12}>
-                  <Profits></Profits>
+                  <Profits
+                    totalMonthlyExpense={totalMonthlyExpense}
+                    totalMonthlyRevenue={totalMonthlyRevenue}
+                    setTotalProfit={setTotalProfit}
+                  ></Profits>
                 </Grid>
                 <Grid item lg={12} md={12} xl={12} xs={12}>
-                  <Cashflow></Cashflow>
+                  <Cashflow
+                    totalMonthlyExpense={totalMonthlyExpense}
+                    totalMonthlyRevenue={totalMonthlyRevenue}
+                    totalProfit={totalProfit}
+                    annualGrowth={annualGrowth}
+                    annualPVGrowth={annualPVGrowth}
+                    annualExpenseGrowth={annualExpenseGrowth}
+                  ></Cashflow>
                 </Grid>
 
                 <Grid item xl={3} lg={3} sm={6} xs={12}>
